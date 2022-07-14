@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <!-- aqui deve ir o Header -->
-    <!-- aqui deve ir a navbar -->
+    
+    <Navbar />
     <div class="view-container">
       <router-view/>
     </div>
@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import Header from "./components/Header.vue"
 import Navbar from "./components/Navbar.vue"
 
 export default {
@@ -20,7 +19,6 @@ export default {
     }
   },
   components: {
-    Header,
     Navbar
   }
 }

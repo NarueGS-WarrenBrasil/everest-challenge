@@ -6,7 +6,11 @@
 
 <script>
 export default {
-  name: 'Register',
+  data(){
+    return{
+      fullname: ""
+    }
+  }
 }
 </script>
 
