@@ -61,12 +61,7 @@ export default {
 
     
     created() {
-      try{
-        this.getUser()
-      }
-      catch(error){
-        console.log(error)
-      }
+      this.getUser()
     },
     methods: {
         onChangePage(User) {
@@ -77,12 +72,18 @@ export default {
         },
 
         async getUser(){
-          const response = await axios.get("/api/users")
-          this.usersList = await response.data.users
-          this.mask = '###.###.###-##'
-          if(this.usersList.length == 0){
-            this.hasUsers = false
+          try{
+            const response = await axios.get("/api/users")
+            this.usersList = await response.data.users
+            this.mask = '###.###.###-##'
+            if(this.usersList.length == 0){
+              this.hasUsers = false
+            }
           }
+          catch(error){
+            console.log(error)
+          }
+          
         }
     }
 }
