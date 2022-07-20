@@ -18,7 +18,7 @@ export default {
   name: 'App',
   data() {
     return {
-      headerTitle: "Usuários"
+      
     }
 
   },
@@ -64,7 +64,5 @@ export default {
     position: absolute;
   }
 
-.ListSwich{
-    margin:0vw 0vw 1vw 5vw
-  }
+
 </style>
