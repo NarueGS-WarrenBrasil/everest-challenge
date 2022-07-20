@@ -1,11 +1,11 @@
 <template>
 <div class="all">
-    <div class="modal-shadow" @click="byeModal()">
+    <div class="modal-shadow" @click="byeModal">
     </div>
     <div class="modal-content" >
         <div class="modal-top">
             <span class="title">Detalhes do usuário</span>
-            <f-icon class="xIcon" @click="byeModal()" icon="fa-solid fa-xmark fa-2xl" />
+            <f-icon class="xIcon" @click="byeModal" icon="fa-solid fa-xmark fa-2xl" />
         </div>
         <div class="user-data">
             <ul>
