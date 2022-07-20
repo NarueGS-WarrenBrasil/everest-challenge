@@ -16,7 +16,7 @@
       <div class="itens_box">
         <li class="namesList" v-for="user in pageOfItems" :key="user.id">
           <span class="fullname">{{user.fullname}}</span>
-          <f-icon @click="datailUser(user)" icon="fa-solid fa-eye"  class="eye"/>
+          <f-icon @click="sendUserDatails(user)" icon="fa-solid fa-eye"  class="eye"/>
         </li>
       </div>
     </ul>
@@ -72,7 +72,7 @@ export default {
         onChangePage(User) {
             this.pageOfItems = User;
         },
-        datailUser(info){
+        sendUserDatails(info){
           this.$emit("SendUser",info)
         },
 
