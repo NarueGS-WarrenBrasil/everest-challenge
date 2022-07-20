@@ -3,8 +3,8 @@
   <div class="content">
 
   
-  <UserCad v-show="swich==false"/>
-  <Pagination @SendUser="createModal" v-show="swich==true"/>
+  <UserCad v-show="!swich"/>
+  <Pagination @SendUser="createModal" v-show="swich"/>
   
   </div>
   <UserModal @byeModal="closeModal" :User="userData" v-show="showModal"/>
