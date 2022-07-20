@@ -73,7 +73,7 @@ export default {
             this.pageOfItems = User;
         },
         sendUserDatails(info){
-          this.$emit("SendUser",info)
+          this.$emit("sendUser",info)
         },
 
         async getUser(){

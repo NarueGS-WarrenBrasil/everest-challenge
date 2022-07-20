@@ -4,7 +4,7 @@
 
   
   <UserCad v-show="!swich"/>
-  <Pagination @SendUser="createModal" v-show="swich"/>
+  <Pagination @sendUser="createModal" v-show="swich"/>
   
   </div>
   <UserModal @byeModal="closeModal" :User="userData" v-show="showModal"/>
