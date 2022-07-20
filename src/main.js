@@ -5,7 +5,6 @@ import router from './router'
 import JwPagination from 'jw-vue-pagination'
 Vue.component('jw-pagination',JwPagination)
 
-import { createServer, Model } from 'miragejs'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faEye, faXmark, faEnvelope} from '@fortawesome/free-solid-svg-icons'
@@ -16,6 +15,8 @@ Vue.component('f-icon', FontAwesomeIcon)
 
 import VueMask from 'v-mask';
 Vue.use(VueMask)
+
+import { createServer, Model } from 'miragejs'
 
 createServer({
   models: {
