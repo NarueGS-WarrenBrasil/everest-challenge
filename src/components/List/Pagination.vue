@@ -1,6 +1,6 @@
 <template>
 <div class="box">
-<NewButtom class="newButton" @click.native="a"/>
+<NewButtom class="newButton" />
   <div v-show="hasUsers" class="list_box">
     <ul>
       <h3>CPF</h3>
@@ -72,12 +72,8 @@ export default {
       })  
     },
     methods: {
-      a(){
-        alert('AAA')
-      },
         onChangePage(User) {
             this.pageOfItems = User;
-
         },
 
         DatailUser(info){
