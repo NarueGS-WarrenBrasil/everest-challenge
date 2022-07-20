@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     change(value){
-      if(value == false){
+      if(!value){
         this.$router.push("/register")
       }
       else{
