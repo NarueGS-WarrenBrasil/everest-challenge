@@ -16,7 +16,7 @@
       <div class="itens_box">
         <li class="namesList" v-for="user in pageOfItems" :key="user.id">
           <span class="fullname">{{user.fullname}}</span>
-          <f-icon @click="DatailUser(user)" icon="fa-solid fa-eye"  class="eye"/>
+          <f-icon @click="datailUser(user)" icon="fa-solid fa-eye"  class="eye"/>
         </li>
       </div>
     </ul>
@@ -26,14 +26,14 @@
     <h1 class="noUserMsg">Nada por aqui</h1>
   </div>
   <div class="pagBox">
-    <jw-pagination :maxPages="3" :pageSize="limit" :labels="MenuLabels"  :items="Users" @changePage="onChangePage"></jw-pagination>
+    <jw-pagination :maxPages="3" :pageSize="limit" :labels="menuLabels"  :items="usersList" @changePage="onChangePage"></jw-pagination>
   </div>
 </div>
 </template>
 
 <script>
 
-const MenuLabels = {
+const menuLabels = {
     first: '<<',
     last: '>>',
     previous: '<',
@@ -47,10 +47,10 @@ export default {
     data() {
         return {
             pageOfItems:[],
-            Users:[],   
+            usersList:[],   
             mask: 'AAAAAAAAAA',
             limit:6,
-            MenuLabels,
+            menuLabels,
             hasUsers:true,
         };
     },
@@ -61,26 +61,31 @@ export default {
 
     
     created() {
-      axios.get("/api/users")
-        .then((res) => this.users = res.data)
-        .then((json) => {
-          this.Users = json.users
-          this.mask = '###.###.###-##'
-      if(this.Users.length == 0){
-        this.hasUsers = false
+      try{
+        this.getUser()
       }
-      })  
+      catch(error){
+        console.log(error)
+      }
     },
     methods: {
         onChangePage(User) {
             this.pageOfItems = User;
         },
-
-        DatailUser(info){
+        datailUser(info){
           this.$emit("SendUser",info)
+        },
+
+        async getUser(){
+          const response = await axios.get("/api/users")
+          this.usersList = await response.data.users
+          this.mask = '###.###.###-##'
+          if(this.usersList.length == 0){
+            this.hasUsers = false
+          }
         }
     }
-};
+}
 </script>
 <style scoped>
   .box{
