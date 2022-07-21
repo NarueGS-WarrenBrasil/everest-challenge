@@ -1,33 +1,47 @@
 <template>
-<div class="content">
-  <UserSwich class="ListSwich" @changeCad="change" @changeList="change" />
+<div>
+  <div class="content">
+
+  
   <UserCad v-show="!swich"/>
-  <Pagination v-show="swich"/>
+  <Pagination @sendUser="createModal" v-show="swich"/>
+  
+  </div>
+  <UserModal @byeModal="closeModal" :User="userData" v-show="showModal"/>
 </div>
+
 </template>
 
 <script>
 
 import Pagination from "@/components/List/Pagination.vue"
-import UserSwich from "../components/List/UserSwich.vue"
 import UserCad from "@/components/List/UserCad.vue"
+import UserModal from "@/components/UserModal.vue"
   export default {
     
     name: "app",
     components:{
-      UserSwich,
       Pagination,
-      UserCad
+      UserCad,
+      UserModal
     },
     
     methods: {
-      change(value){
-        this.swich = value
+      createModal(userInfo){
+        this.userData = userInfo
+        this.showModal = true
+      },
+
+      closeModal(){
+        this.showModal = false
       }
+
     },
     data() {
       return {        
-        swich:true
+        swich:true,
+        showModal:false,
+        userData:{},
       }
     },
 
@@ -37,19 +51,19 @@ import UserCad from "@/components/List/UserCad.vue"
 </script>
 
 <style scoped>
+
+
 .content{
     padding-left: 2em;
-    margin-left: 27%;
-    width: 45.2vw;
-    align-content: center;
+    width: 100%;
+    justify-content: center;
+    display: flex;
   }
 
-  .ListSwich{
+.ListSwich{
     margin-bottom: 1vw
   }
 
-  *{
-    font-size: min(24px,1vw);
-  }
+
 
 </style>

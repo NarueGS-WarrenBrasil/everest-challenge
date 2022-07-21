@@ -9,7 +9,7 @@
     width: 2vw;
     height: 2vw;
    }
-     #navbar {
+    #navbar {
     background-color: rgb(255, 26, 95);
     display: flex;
     justify-content: center;
@@ -21,9 +21,9 @@
     color: azure; 
   }
   #title{
-      font-size: clamp(0.3em, 0.7vw, 1em);
+      font-size: clamp(0.1em,0.4rem + 0.4vw, 1em);
       font-weight: 700;
-      margin-top:0.8vw;
+      margin-top:max(0.5vw);
     }
 </style>
 
