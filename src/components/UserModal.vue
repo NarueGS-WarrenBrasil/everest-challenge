@@ -67,9 +67,7 @@ export default {
             cpfMask:"###.###.###-##",
             phoneMask:"+55(##)#####-####",
             get:false
-            
-
-        }
+            }
     },
     props:{
         User:{
@@ -81,13 +79,11 @@ export default {
         byeModal(){
             this.$emit("byeModal")
         },
-
     },
 }
 </script>
 
 <style scoped>
-
     *{
         font-size: clamp(1vw,0.5em + 0.5vw, 1.5em);
     }
@@ -174,7 +170,6 @@ export default {
         width: auto;
         height: auto;
     }
-
     li{
         list-style: none;
         width: auto;
@@ -190,6 +185,4 @@ export default {
     span{
         font-weight: 700;
     }
-    
-
 </style>
