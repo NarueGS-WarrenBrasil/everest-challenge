@@ -166,13 +166,12 @@ export default {
 
   .noUserMsg{
     position: absolute;
-    width:37vw;
+    width:100%;
     height: 17vh;
     text-align: center;
-    margin-top:10vh;
+    margin-top:5.5vh;
     padding-top:4vh;
     color:white;
-    margin-left: 3vw;
     background-color: rgba(0, 0, 0, 0.757);
   }
 
