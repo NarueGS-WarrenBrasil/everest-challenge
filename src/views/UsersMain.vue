@@ -47,8 +47,6 @@ import UserModal from "@/components/UserModal.vue"
 </script>
 
 <style scoped>
-
-
 .content{
     padding-left: 2em;
     width: 100%;
@@ -59,7 +57,4 @@ import UserModal from "@/components/UserModal.vue"
 .ListSwich{
     margin-bottom: 1vw
   }
-
-
-
 </style>
