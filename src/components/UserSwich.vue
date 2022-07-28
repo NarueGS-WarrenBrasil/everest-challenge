@@ -1,10 +1,7 @@
 <template>
   <div class="swich">
-    <span @click="changeCad" :class="cad">
-        CADASTRO
-    </span>
-    <span @click="changeList" :class="list" >LISTAGEM</span>
-    
+    <span @click="changeCad" :class="cad">CADASTRO</span>
+    <span @click="changeList" :class="list" >LISTAGEM</span>  
   </div>
 </template>
 
@@ -17,24 +14,30 @@ export default {
             moviment: 'users',
             default: true
         }
-    },  
+    },
+
+    created(){
+        if(this.$route.path == "/register"){
+            this.cad = 'on'
+            this.list = 'off'
+        }
+        else{
+            this.cad = 'off'
+            this.list = 'on'
+        }
+    },
     methods: {
         changeCad(){
             this.cad = 'on'
             this.list = 'off'
-            this.default = false
-            this.moviment = 'cadastro'
-            this.$emit("changeCad",this.default)
+            this.$router.push("/register")
         },
 
         changeList(){
             this.cad = 'off'
             this.list = 'on'
-            this.default = true
-            this.moviment = 'users'
-            this.$emit("changeList",this.default)
+            this.$router.push("/")
         }
-
     },
 
 }

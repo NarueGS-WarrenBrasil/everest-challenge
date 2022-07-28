@@ -9,7 +9,7 @@ export default {
 </script>
 
 <style>
-    .newUser:hover{
+.newUser:hover{
     background-color: rgb(255, 255, 255);
     border: solid 1px rgb(255, 26, 95);
     color: rgb(255, 26, 95)
