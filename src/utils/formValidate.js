@@ -28,17 +28,15 @@ const vEmail = (email) => {
 }
 
 const vNormalString = (str) =>{
-  let hasSpecial = /[^a-zA-Z 0-9]+/g
-  let strArray = str.split("")
+  let invalidSpace = /[ ]{2,}/.test(str)
+  let strArray = str.split("")  
   for(let i=0;i<strArray.length;i++){
-    if(strArray[i] == " " && strArray[i]+1 == " "){
-      return false
-    }
     if(!isNaN(parseFloat(strArray[i]))){
       return false
     }
   }
-  return !hasSpecial.test(str)
+  if(!invalidSpace && strArray.length > 2 ){return true}
+  else{return false}
 }
 
 const vCPF = (cpf) =>{
