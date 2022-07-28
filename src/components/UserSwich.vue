@@ -1,10 +1,7 @@
 <template>
   <div class="swich">
-    <span @click="changeCad" :class="cad">
-        CADASTRO
-    </span>
-    <span @click="changeList" :class="list" >LISTAGEM</span>
-    
+    <span @click="changeCad" :class="cad">CADASTRO</span>
+    <span @click="changeList" :class="list" >LISTAGEM</span>  
   </div>
 </template>
 

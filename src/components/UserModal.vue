@@ -84,105 +84,105 @@ export default {
 </script>
 
 <style scoped>
-    *{
-        font-size: clamp(1vw,0.5em + 0.5vw, 1.5em);
-    }
+*{
+    font-size: clamp(1vw,0.5em + 0.5vw, 1.5em);
+}
 
-    .all{
-        display:flex;
-        justify-content: center;
-    }
-    .modal-shadow{
-        width: 100%;
-        height: 43.35vw;
-        position: absolute;
-        z-index: 1;
-    }
+.all{
+    display:flex;
+    justify-content: center;
+}
+.modal-shadow{
+    width: 100%;
+    height: 43.35vw;
+    position: absolute;
+    z-index: 1;
+}
 
-    .modal-content{
-        border-radius: 0.5vw;
-        width: 30vw;
-        height: 21.5vw;
-        top: 4vw;
-        background-color: rgb(255, 255, 255);
-        position: absolute;
-        align-content: center;
-        z-index: 2;
-        box-shadow: 0 0 0 1000vw rgba(0, 0, 0, 0.517);
+.modal-content{
+    border-radius: 0.5vw;
+    width: 30vw;
+    height: 21.5vw;
+    top: 4vw;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    align-content: center;
+    z-index: 2;
+    box-shadow: 0 0 0 1000vw rgba(0, 0, 0, 0.517);
 
-    }  
-    
-    .modal-top{
-        width: 100%;
-        height: 3.3vw;
-        font-weight: 700;
-        display: flex;
-        justify-content: flex-end;
-        padding: 1.5vw 1.5vw 0 0;
-    }
+}  
 
-    .title{
-        margin-right:30%;
-    }
+.modal-top{
+    width: 100%;
+    height: 3.3vw;
+    font-weight: 700;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.5vw 1.5vw 0 0;
+}
 
-    .xIcon{
-        width: 1vw;
-        height: 1vw;
-    }
+.title{
+    margin-right:30%;
+}
 
-    .xIcon:hover{
-        color:rgb(255, 0, 76);
-        border-radius:2vw;
-        background-color: rgb(219, 213, 213);
-        transform: translateZ(10px) scale(1.5);
-    }
+.xIcon{
+    width: 1vw;
+    height: 1vw;
+}
 
-    .user-data{
-        width: 88%;
-        height: 15vw;
-        border:solid 2px rgb(227, 227, 227);
-        border-style: dashed ;
-        margin-left: 1.85vw;
-        padding: 3vw 0vw 0vw 0vw;
-        display:flex;
-        justify-content: space-evenly;
-    }
+.xIcon:hover{
+    color:rgb(255, 0, 76);
+    border-radius:2vw;
+    background-color: rgb(219, 213, 213);
+    transform: translateZ(10px) scale(1.5);
+}
 
-    .userItem{
-        margin: 0em 0.5em 2.7em 0.5em;
-        width: 10vw;
-        height: auto;
-        word-break: break-all;
-    }
+.user-data{
+    width: 88%;
+    height: 15vw;
+    border:solid 2px rgb(227, 227, 227);
+    border-style: dashed ;
+    margin-left: 1.85vw;
+    padding: 3vw 0vw 0vw 0vw;
+    display:flex;
+    justify-content: space-evenly;
+}
 
-    .bigField{
-        z-index: 2;
-        width: 10vw;
-        overflow: hidden;
-        text-overflow:ellipsis;
-        white-space:nowrap;
-    }
+.userItem{
+    margin: 0em 0.5em 2.7em 0.5em;
+    width: 10vw;
+    height: auto;
+    word-break: break-all;
+}
 
-    .bigField:hover{
-        overflow:visible;
-        background-color: rgb(255, 255, 255);
-        box-shadow: 0px 0px 1px 1100px rgba(0, 0, 0, 0.43);
-        width: auto;
-        height: auto;
-    }
-    li{
-        list-style: none;
-        width: auto;
-        position:absolute;
-        z-index: 1;
-    }
+.bigField{
+    z-index: 2;
+    width: 10vw;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
 
-    ul{
-        width: auto;
-        height: auto;
-        }
-            
-    span{
-        font-weight: 700;
+.bigField:hover{
+    overflow:visible;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 1px 1100px rgba(0, 0, 0, 0.43);
+    width: auto;
+    height: auto;
+}
+li{
+    list-style: none;
+    width: auto;
+    position:absolute;
+    z-index: 1;
+}
+
+ul{
+    width: auto;
+    height: auto;
     }
+        
+span{
+    font-weight: 700;
+}
 </style>
