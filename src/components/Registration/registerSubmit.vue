@@ -4,7 +4,6 @@
     <button class="cancel" @click="cancelForm()">Cadastrar</button>
 </div>
 </template>
-
 <script>
 export default {
     methods: {
@@ -62,5 +61,4 @@ button{
     display:flex;
     justify-content: center;
 }
-
 </style>

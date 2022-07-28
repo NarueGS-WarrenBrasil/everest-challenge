@@ -6,4 +6,4 @@ export default{
     invalidDate: "Data inválida",
     invalidPhone: "Número de telefone inválido",
     invalidName:"Nome inválido",
-    }
+}
