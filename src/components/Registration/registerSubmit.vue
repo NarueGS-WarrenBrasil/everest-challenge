@@ -1,7 +1,7 @@
 <template>
 <div class="footerContent">
-    <button class="submit" @click="confirmForm()">Cadastrar</button>
-    <button class="cancel" @click="cancelForm()">Cadastrar</button>
+    <button class="submit" @click="confirmForm">Cadastrar</button>
+    <button class="cancel" @click="cancelForm">Cadastrar</button>
 </div>
 </template>
 <script>
