@@ -58,6 +58,7 @@ import registerSubmit from "./registerSubmit.vue"
 import msgs from "@/utils/formErrorMsgs"
 import formValidate from "@/utils/formValidate"
 import axios from "axios"
+import router from '@/router'
 export default {
 data(){
     return{
@@ -70,9 +71,10 @@ data(){
             phone:"",
             checkZap: false,
             checkSMS: false,
-        },        
+        },
     }
 },
+
 components:{
     registerSubmit
 },
@@ -147,22 +149,21 @@ components:{
                 }
             }
         }
-
         if(key != 6){
             throw "Form Error" 
         }        
         else{
             const article = {fullname: user.fullName, cpf: user.cpf, phone: user.phone, email: user.email, confirmEmail: user.confirmEmail, birthDate: user.birthDate, checkZap:user.checkZap, checkSMS:user.checkSMS};
             const response = await axios.post("/api/users", article)
-            this.$router.push("/")
-        }
+            this.$router.push('users')
+          }
         }
       catch(error){
         console.log(error)
       }
     },
     leave(){
-        this.$router.push("/")
+        this.$router.push('users')
     }
   },
 }
