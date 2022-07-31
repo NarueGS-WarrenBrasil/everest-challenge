@@ -56,6 +56,7 @@
 <script>
 import registerSubmit from "./registerSubmit.vue"
 import msgs from "@/utils/formErrorMsgs"
+import
 import formValidate from "@/utils/formValidate"
 import axios from "axios"
 import router from '@/router'
@@ -91,64 +92,34 @@ components:{
         for(let i =0;i<elementArray.length;i++){
             this.$refs[elementArray[i]].innerHTML = ""
         }
-        fields.errors.map((value, index) => {
+        fields.errors.map((value) => {
             if ([0, 1, 2, 3, 4, 5].includes(value)){
                 this.$refs[elementArray[value]].innerHTML = msgs.blank
             }
         })
-        for(let i = 0;i < fields.check.length;i++){
-            if(fields.check[i] == 0){
-                if(formValidate.vNormalString(this.newUser.fullName)){
-                    key += 1
-                    this.$refs.nameError.innerHTML = ""
-                }
-                else{
-                    this.$refs.nameError.innerHTML = msgs.invalidName
-                }
+        fields.check.map((value) => {
+            if (value == 0){
+              if(formValidate.vNormalString(this.newUser.fullName)){this.$refs[elementArray[value]].innerHTML = "", key += 1}
+              else{this.$refs[elementArray[value]].innerHTML = msgs.invalidName}
             }
-            if(fields.check[i] == 1){
-                if(formValidate.vEmail(this.newUser.email)){
-                    this.$refs.emailError.innerHTML = ""
-                    key += 1
-                }
-                else{
-                    this.$refs.emailError.innerHTML = msgs.invalidEmail
-                    this.$refs.email2Error.innerHTML = msgs.invalidEmail
-                }
+            if(value == 1){
+              if(formValidate.vEmail(this.newUser.email)){this.$refs[elementArray[value]].innerHTML = "", key += 1}
+              else{this.$refs[elementArray[value]].innerHTML = msgs.invalidEmail}
             }
-            if(fields.check[i] == 2){
-                if(formValidate.vCPF(this.cpfClean())){
-                    this.$refs.cpfError.innerHTML = ""
-                    key += 1
-                }
-                else{this.$refs.cpfError.innerHTML = msgs.invalidCPF}
+            if(value == 2){
+              if(formValidate.vCPF(this.cpfClean(this.newUser.cpf))){this.$refs[elementArray[value]].innerHTML = "", key += 1}
+              else{this.$refs[elementArray[value]].innerHTML = msgs.invalidCPF}
             }
-            if( fields.check[i] == 3){
-                if(this.newUser.birthDate.split("").length == 10){
-                    this.$refs.dateError.innerHTML = ""
-                    key += 1
-                }
-                else{this.$refs.dateError.innerHTML = msgs.invalidDate}
+            if(value == 3){
+              this.$refs[elementArray[value]].innerHTML = ""
             }
-            if( fields.check[i] == 4){
-                if(this.newUser.email == this.newUser.confirmEmail){
-                    this.$refs.email2Error.innerHTML = ""
-                    key += 1
-                }
-                else{
-                    this.$refs.email2Error.innerHTML = msgs.diferent
-                }
+            if(value == 5){
+              if(this.newUser.confirmEmail == this.newUser.email){this.$refs[elementArray[value]].innerHTML = "", key += 1}
+              else{this.$refs[elementArray[value]].innerHTML = msgs.diferent
+                this.$refs[elementArray[1]].innerHTML = msgs.diferent
+              }
             }
-            if( fields.check[i] == 5){
-                if(this.newUser.phone.split("").length == 17){
-                    this.$refs.phoneError.innerHTML = ""
-                    key += 1
-                }
-                else{
-                    this.$refs.phoneError.innerHTML = msgs.invalidPhone
-                }
-            }
-        }
+        })
         if(key != 6){
             throw "Form Error" 
         }        
