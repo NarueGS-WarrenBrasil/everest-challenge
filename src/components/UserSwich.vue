@@ -30,13 +30,13 @@ export default {
         changeCad(){
             this.cad = 'on'
             this.list = 'off'
-            this.$router.push("cadastro")
+            this.$router.push("/register")
         },
 
         changeList(){
             this.cad = 'off'
             this.list = 'on'
-            this.$router.push("users")
+            this.$router.push("/")
         }
     },
 

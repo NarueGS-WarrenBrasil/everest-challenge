@@ -49,14 +49,13 @@
         <input type="checkbox" v-model="newUser.checkSMS" class="checkin" name="whats">
         <span>Email e SMS</span>
     </div><br>
-    <registerSubmit @cancelForm="leave" @confirmForm="createUser(newUser)"/>
+    <registerSubmit @cancelForm="leave" @confirmForm=" createUser(newUser)" />
   </div>
 </template>
 
 <script>
 import registerSubmit from "./registerSubmit.vue"
 import msgs from "@/utils/formErrorMsgs"
-import
 import formValidate from "@/utils/formValidate"
 import axios from "axios"
 import router from '@/router'
@@ -75,7 +74,6 @@ data(){
         },
     }
 },
-
 components:{
     registerSubmit
 },
@@ -99,25 +97,28 @@ components:{
         })
         fields.check.map((value) => {
             if (value == 0){
-              if(formValidate.vNormalString(this.newUser.fullName)){this.$refs[elementArray[value]].innerHTML = "", key += 1}
+              if(formValidate.vNormalString(this.newUser.fullName)){this.$refs[elementArray[value]].innerHTML = "", key += 1 }
               else{this.$refs[elementArray[value]].innerHTML = msgs.invalidName}
             }
             if(value == 1){
-              if(formValidate.vEmail(this.newUser.email)){this.$refs[elementArray[value]].innerHTML = "", key += 1}
+              if(formValidate.vEmail(this.newUser.email)){this.$refs[elementArray[value]].innerHTML = "", key += 1 }
               else{this.$refs[elementArray[value]].innerHTML = msgs.invalidEmail}
             }
             if(value == 2){
-              if(formValidate.vCPF(this.cpfClean(this.newUser.cpf))){this.$refs[elementArray[value]].innerHTML = "", key += 1}
+              if(formValidate.vCPF(this.cpfClean(this.newUser.cpf))){this.$refs[elementArray[value]].innerHTML = "", key += 1 }
               else{this.$refs[elementArray[value]].innerHTML = msgs.invalidCPF}
             }
-            if(value == 3){
-              this.$refs[elementArray[value]].innerHTML = ""
+            if(value == 3){this.$refs[elementArray[value]].innerHTML = "",key += 1,alert(key)
             }
-            if(value == 5){
-              if(this.newUser.confirmEmail == this.newUser.email){this.$refs[elementArray[value]].innerHTML = "", key += 1}
+            if(value == 4){
+              if(this.newUser.confirmEmail == this.newUser.email){this.$refs[elementArray[value]].innerHTML = "", key += 1,alert(key)}
               else{this.$refs[elementArray[value]].innerHTML = msgs.diferent
                 this.$refs[elementArray[1]].innerHTML = msgs.diferent
               }
+            }
+            if(value == 5){
+              if(this.newUser.phone.length == 17){ this.$refs[elementArray[value]].innerHTML = "", key += 1}
+              else{this.$refs[elementArray[value]].innerHTML = msgs.invalidPhone}
             }
         })
         if(key != 6){
@@ -126,7 +127,7 @@ components:{
         else{
             const article = {fullname: user.fullName, cpf: user.cpf, phone: user.phone, email: user.email, confirmEmail: user.confirmEmail, birthDate: user.birthDate, checkZap:user.checkZap, checkSMS:user.checkSMS};
             const response = await axios.post("/api/users", article)
-            this.$router.push('users')
+            this.$router.push('/')
           }
         }
       catch(error){
@@ -134,7 +135,7 @@ components:{
       }
     },
     leave(){
-        this.$router.push('users')
+        this.$router.push('/')
     }
   },
 }
