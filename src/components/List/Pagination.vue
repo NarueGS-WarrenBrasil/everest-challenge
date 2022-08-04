@@ -10,7 +10,6 @@
         </li>
       </div>
     </ul>
-      
     <ul>
       <h3>Nome Completo</h3>
       <div class="itens_box">
@@ -32,7 +31,6 @@
 </template>
 
 <script>
-
 const menuLabels = {
     first: '<<',
     last: '>>',
@@ -59,7 +57,6 @@ export default {
       NothingHere
     },
 
-    
     created() {
       this.getUser()
     },
@@ -70,7 +67,6 @@ export default {
         sendUserDatails(info){
           this.$emit("sendUser",info)
         },
-
         async getUser(){
           try{
             const response = await axios.get("/api/users")
@@ -83,7 +79,6 @@ export default {
           catch(error){
             console.log(error)
           }
-          
         }
     }
 }
@@ -166,13 +161,12 @@ export default {
 
   .noUserMsg{
     position: absolute;
-    width:37vw;
+    width:100%;
     height: 17vh;
     text-align: center;
-    margin-top:10vh;
+    margin-top:5.5vh;
     padding-top:4vh;
     color:white;
-    margin-left: 3vw;
     background-color: rgba(0, 0, 0, 0.757);
   }
 
@@ -180,7 +174,6 @@ export default {
   .list_box{
     width: 60vw;
   }
-
 }
 </style>
 

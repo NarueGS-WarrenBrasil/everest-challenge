@@ -53,6 +53,7 @@ export default {
 svg{
     width: 13vw;
     height: 43vh;
+    margin-left: -3.5vw;
 }
 
 </style>

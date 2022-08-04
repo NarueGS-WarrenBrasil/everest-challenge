@@ -2,7 +2,6 @@
   <div id="app">
     <div class="staticContent">
       <Navbar />
-      <UserSwich  @changeCad="change" @changeList="change" />
     </div>
     <div class="view-container">
       <router-view />
@@ -12,7 +11,6 @@
 
 <script>
 import Navbar from "./components/Navbar.vue"
-import UserSwich from "@/components/List/UserSwich.vue"
 
 export default {
   name: 'App',
@@ -20,22 +18,11 @@ export default {
     return {
       
     }
-
   },
   components: {
     Navbar,
-    UserSwich
   },
   methods: {
-    change(value){
-      if(!value){
-        this.$router.push("/register")
-      }
-      else{
-        this.$router.push("/")
-      }
-        
-      },
   },
 }
 </script>
@@ -58,10 +45,9 @@ export default {
   }
 
   .view-container{
-    display: flex;
-    justify-content: center;
     width: 100%;
     position: absolute;
+    
   }
 
 

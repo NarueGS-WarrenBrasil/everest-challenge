@@ -1,11 +1,8 @@
 <template>
 <div>
   <div class="content">
-
-  
-  <UserCad v-show="!swich"/>
+    <UserSwich />
   <Pagination @sendUser="createModal" v-show="swich"/>
-  
   </div>
   <UserModal @byeModal="closeModal" :User="userData" v-show="showModal"/>
 </div>
@@ -13,17 +10,16 @@
 </template>
 
 <script>
-
+import UserSwich from "@/components/UserSwich.vue"
 import Pagination from "@/components/List/Pagination.vue"
-import UserCad from "@/components/List/UserCad.vue"
 import UserModal from "@/components/UserModal.vue"
   export default {
     
     name: "app",
     components:{
       Pagination,
-      UserCad,
-      UserModal
+      UserModal,
+      UserSwich
     },
     
     methods: {
@@ -51,8 +47,6 @@ import UserModal from "@/components/UserModal.vue"
 </script>
 
 <style scoped>
-
-
 .content{
     padding-left: 2em;
     width: 100%;
@@ -63,7 +57,4 @@ import UserModal from "@/components/UserModal.vue"
 .ListSwich{
     margin-bottom: 1vw
   }
-
-
-
 </style>
